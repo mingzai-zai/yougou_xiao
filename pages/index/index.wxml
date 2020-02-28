@@ -19,4 +19,22 @@
       <image src="{{item.image_src}}"></image>
     </navigator>
   </view>
+
+  <!-- 不同类型展示 -->
+  <!-- <block></block>可以用来循环，只会在block内部循环不会妨碍外面 -->
+  <!-- block没有语义的，不会在dom结构中生成的，一般用于for循环 -->
+  <view class="type" wx:for="{{pictures}}" wx:key="index">
+    <image src="{{item.floor_title.image_src}}"></image>
+    <view class="pics">
+      <view class="pics_left">
+        <image src="{{item.product_list[0].image_src}}" mode="aspectFill"></image>
+      </view>
+      <view class="pics_right">
+        <block wx:for="{{item.product_list}}" wx:key="index">
+          <image  wx:if="{{index>0}}" src="{{item.image_src}}" mode="aspectFill"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+  
 </view>

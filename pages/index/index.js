@@ -3,7 +3,8 @@ import axios from "../../utils/axios.js"
 Page({
   data:{
     swiperlist:[],
-    navs:[]
+    navs:[],
+    pictures:[]
   },
   onLoad(){
     // 轮播图的
@@ -20,7 +21,7 @@ Page({
     axios({
       url:'/home/catitems'
     }).then(res=>{
-      console.log(res);
+      // console.log(res);
       let {message} = res.data;
       message.map((e,i)=>{
         if(i===0) {
@@ -32,6 +33,15 @@ Page({
         navs:message
       })
     })
-
+    // 获取类型的图片
+    axios({
+      url:'/home/floordata',
+    }).then(res=>{
+      console.log(res);
+      let {message} = res.data;
+      this.setData({
+        pictures:message
+      })
+     })
   }
 })
