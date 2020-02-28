@@ -26,3 +26,13 @@
   width: 100%;
   height: 340rpx;
 }
+
+.nav{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+.nav image{
+  width: 128rpx;
+  height: 140rpx;
+}

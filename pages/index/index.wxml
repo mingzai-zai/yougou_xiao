@@ -13,4 +13,10 @@
       </swiper-item>
     </block>
   </swiper>
+  <!-- 小导航 -->
+  <view class="nav">
+    <navigator wx:for="{{navs}}" wx:key="index" url="{{item.url || '#'}}" open-type="{{item.open_type}}">
+      <image src="{{item.image_src}}"></image>
+    </navigator>
+  </view>
 </view>
