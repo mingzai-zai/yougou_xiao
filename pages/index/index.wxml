@@ -36,5 +36,11 @@
       </view>
     </view>
   </view>
+
+  <!-- 回到顶部 -->
+  <view class="back" bindtap="toTop" wx:if="{{flag}}">
+    <view class="arrow"></view>
+    <view>顶部</view>
+  </view>
   
 </view>

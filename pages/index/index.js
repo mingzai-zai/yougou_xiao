@@ -4,7 +4,8 @@ Page({
   data:{
     swiperlist:[],
     navs:[],
-    pictures:[]
+    pictures:[],
+    flag:false
   },
   onLoad(){
     // 轮播图的
@@ -37,11 +38,31 @@ Page({
     axios({
       url:'/home/floordata',
     }).then(res=>{
-      console.log(res);
+      // console.log(res);
       let {message} = res.data;
       this.setData({
         pictures:message
       })
      })
+  },
+  toTop(){
+    wx.pageScrollTo({
+      scrollTop:0
+    })
+  },
+  onPageScroll(e){
+    // console.log(this.data.flag)
+    let hight = e.scrollTop;
+    var flag2 = this.data.flag;
+    // console.log(hight)
+    if(hight>=200) {
+      flag2= true;
+    }else {
+     flag2=false;
+    }
+    if(flag2==this.data.flag) return;
+    this.setData({
+      flag:flag2
+    })
   }
 })
