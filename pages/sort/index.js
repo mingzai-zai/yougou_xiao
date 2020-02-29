@@ -9,7 +9,7 @@ Page({
    axios({
      url:'/categories',
    }).then(res=>{
-     console.log(res);
+    //  console.log(res);
     let {message} = res.data;
     this.setData({
       sortlist:message

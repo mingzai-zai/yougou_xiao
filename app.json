@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/sort/index",
     "pages/shopcar/index",
-    "pages/myself/index"
+    "pages/myself/index",
+    "pages/searchfoods/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

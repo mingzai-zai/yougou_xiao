@@ -1,0 +1,18 @@
+<!--pages/searchfoods/index.wxml-->
+<!-- 搜索框 -->
+<view class="search">
+  <icon type="search" color="#ccc"/>
+  <input class="weui-input" placeholder="请输入所需要的商品"/>
+</view>
+<!-- 列表分类 -->
+<view class="type">
+  <view wx:for="{{ ['综合','销量','价格'] }}" wx:key="index" bindtap="typetab" data-index="{{index}}" class="{{current==index?'active':''}}">{{item}}<view wx:if="{{index==2}}" class="updown"></view></view>
+</view>
+<!-- 商品列表展示 -->
+<view class="foods">
+  <image mode="aspectFill" src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg"></image>
+  <view class="content">
+    <view class="top">千库网为您提供500万精品PNG图片素材网 免费下载,200万海报背景</view>
+    <view class="but">￥<text>69.00</text></view>
+  </view>
+</view>

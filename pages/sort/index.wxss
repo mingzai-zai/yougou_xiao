@@ -58,9 +58,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 33%;
+  flex: 0,0,33%;
   font-size: 12px;
-  margin-bottom: 10rpx;
+  padding: 6rpx;
+  box-sizing: border-box;
 }
 .details image{
   width: 175rpx;
