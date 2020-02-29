@@ -9,6 +9,7 @@
 .sort_left{
   height: 100%;
   overflow: auto;
+  flex-shrink: 0;
 }
 .list{
   width: 200rpx;
@@ -36,4 +37,31 @@
   /* width: 3px; */
   height: 60rpx;
   /* background: #ff2d4a; */
+}
+.sort_right{
+  overflow: auto;
+}
+.sort_right .title{
+  margin:26rpx 0 0 220rpx;
+  color: #ccc;
+  font-size: 14px;
+}
+.sort_right .title text{
+  color: #777;
+}
+.details{
+  display: flex;
+  flex-wrap: wrap;
+}
+.details navigator{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 33%;
+  font-size: 12px;
+  margin-bottom: 10rpx;
+}
+.details image{
+  width: 175rpx;
 }

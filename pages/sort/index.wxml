@@ -3,13 +3,19 @@
   <view class="sort_left">
     <view class="list {{ current==index?'active':'' }}" wx:for="{{sortlist}}" wx:key="index" bindtap="click" data-index="{{index}}">{{item.cat_name}}</view>
   </view>
+  <!-- wx:for-item="名字"这样可以改item的名字 -->
   <view class="sort_right">
-    <view class="title">/ <text>电视</text> /</view>
-    <view class="details">
-      <navigator>
-        <image src="https://fc3tn.baidu.com/it/u=3025909226,1763324618&fm=202&src=bqdata"></image>
-        <view>曲面电视</view>
-      </navigator>
-    </view> 
+     <block wx:for="{{sortlist[current].children}}" wx:key="index">
+      <view class="title">/ <text>{{item.cat_name}}</text> /</view>
+      <view class="details">
+        <block wx:for="{{item.children}}" wx:for-item="e" wx:key="index">
+          <navigator>
+            <image src="{{e.cat_icon}}" mode="widthFix"></image>
+            <view>{{e.cat_name}}</view>
+        </navigator>
+        </block>
+      </view> 
+    </block>
   </view>
+  
 </view>
