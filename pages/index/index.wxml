@@ -1,10 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-<!-- 搜索框 -->
-<!-- 完成搜索页面再开始写跳转 -->
-  <navigator class="search">
-    <view class="searchson"> <icon type="search" size="18" color="#ccc"></icon>搜索 </view>
-  </navigator>
+  <!-- 搜索框 -->
+  <search></search>
   <!-- 轮播图 -->
   <swiper class="swiper" indicator-dots indicator-color="rgba(255,255,255,.3)" indicator-active-color="#fff" circular	>
     <block wx:for="{{swiperlist}}" wx:key="index">

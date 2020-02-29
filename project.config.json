@@ -57,9 +57,10 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "pages/sort/index",
 					"pathName": "pages/sort/index",
+					"query": "",
 					"scene": null
 				}
 			]

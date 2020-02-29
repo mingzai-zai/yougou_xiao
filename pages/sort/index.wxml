@@ -1,4 +1,6 @@
 <!--pages/sort/index.wxml-->
+<!-- 搜索框 -->
+<search></search>
 <view class="sort"> 
   <view class="sort_left">
     <view class="list {{ current==index?'active':'' }}" wx:for="{{sortlist}}" wx:key="index" bindtap="click" data-index="{{index}}">{{item.cat_name}}</view>

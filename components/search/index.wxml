@@ -1,0 +1,6 @@
+<!--components/search/index.wxml-->
+<!-- 搜索框 -->
+<!-- 完成搜索页面再开始写跳转 -->
+  <navigator class="search">
+    <view class="searchson"> <icon type="search" size="18" color="#ccc"></icon>搜索 </view>
+  </navigator>
