@@ -1,1 +1,39 @@
 /* pages/sort/index.wxss */
+.sort {
+  position: fixed;
+  top: 60rpx;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.sort_left{
+  height: 100%;
+  overflow: auto;
+}
+.list{
+  width: 200rpx;
+  height: 100rpx;
+  background: #ccc;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px;
+}
+.active{
+  color: #ff2d4a;
+  font-weight: 600;
+  background: #fff;
+  position: relative;
+}
+.active::before{
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  border:2px solid #ff2d4a;
+  /* width: 3px; */
+  height: 60rpx;
+  /* background: #ff2d4a; */
+}

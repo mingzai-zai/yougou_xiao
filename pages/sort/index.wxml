@@ -1,2 +1,15 @@
 <!--pages/sort/index.wxml-->
-<text>pages/sort/index.wxml</text>
+<view class="sort"> 
+  <view class="sort_left">
+    <view class="list {{ current==index?'active':'' }}" wx:for="{{sortlist}}" wx:key="index" bindtap="click" data-index="{{index}}">{{item.cat_name}}</view>
+  </view>
+  <view class="sort_right">
+    <view class="title">/ <text>电视</text> /</view>
+    <view class="details">
+      <navigator>
+        <image src="https://fc3tn.baidu.com/it/u=3025909226,1763324618&fm=202&src=bqdata"></image>
+        <view>曲面电视</view>
+      </navigator>
+    </view> 
+  </view>
+</view>
