@@ -54,7 +54,6 @@
 /* 商品展示 */
 .foods{
   display: flex;
-  justify-content: space-between;
   height: 260rpx;
   border-bottom: 1px solid #ccc;
   padding: 25rpx;
@@ -83,4 +82,7 @@
 }
 .content .but text{
   font-size: 20px;
+}
+.tip{
+  margin: 50rpx 100rpx;
 }
