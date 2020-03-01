@@ -60,7 +60,9 @@ Page({
     })
   },
   tiaozhuan(e){
-    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: `/pages/foodsdetail/index?id=${e.currentTarget.dataset.id}`,
+    })
   },
   onLoad(option){
     // console.log(option.id)

@@ -1,1 +1,46 @@
 <!--pages/foodsdetail/index.wxml-->
+<view class="detail">
+  <!-- 轮播图 -->
+  <view class="swiper">
+    <swiper indicator-dots>
+        <swiper-item>
+          <image src="https://fc3tn.baidu.com/it/u=3929630184,8110791&fm=202&src=bqdata" mode="aspectFill"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="https://fc3tn.baidu.com/it/u=3929630184,8110791&fm=202&src=bqdata" mode="aspectFill"></image>
+        </swiper-item>
+      </swiper>
+  </view>
+  <!-- 价格 -->
+  <view class="price">￥279</view>
+  <!-- 描述 -->
+  <view class="miaoshu">
+    <view class="shuoming">初语2017秋装新欢潮牌女装加绒宽松BF风荣懒唯一女头套连帽上衣</view>
+    <view class="shoucang">
+      <view class="iconfont icon-shoucang"></view>
+      <text>收藏</text>
+    </view>
+  </view>
+  <!-- 免运费 -->
+  <view class="free">
+    快递： 免运费
+  </view>
+  <!-- 隔一下 -->
+  <view class="kong"></view>
+  <!-- 下边部分 -->
+  <view wx:for="{{20}}" wx:key="index">113444444441</view>
+ 
+</view>
+ <!-- 底部四个选项 -->
+<view class="tab">
+  <view class="kefu">
+    <view class="iconfont icon-kefu"></view>
+    <view>联系客服</view>
+  </view>
+  <view class="shopcar">
+    <view class="iconfont icon-gouwuche"></view>
+    <view>购物车</view>
+  </view>
+  <view class="joincar">加入购物车</view>
+  <view class="buy">立即购买</view>
+</view>
