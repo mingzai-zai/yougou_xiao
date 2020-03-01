@@ -4,7 +4,8 @@
     "pages/sort/index",
     "pages/shopcar/index",
     "pages/myself/index",
-    "pages/searchfoods/index"
+    "pages/searchfoods/index",
+    "pages/foodsdetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -58,5 +58,23 @@ Page({
         foodslist:this.data.foodslist,
       })
     })
+  },
+  tiaozhuan(e){
+    console.log(e.currentTarget.dataset.id)
+  },
+  onLoad(option){
+    // console.log(option.id)
+    this.setData({
+      cid: option.id,
+    })
+    axios({
+      url:'/goods/search',
+      data:this.data.cid
+    }).then(res=>{
+      let { goods } = res.data.message;
+      this.setData({
+        foodslist: goods,
+      })
+    })
   }
 })

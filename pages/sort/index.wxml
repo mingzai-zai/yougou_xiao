@@ -11,10 +11,10 @@
       <view class="title">/ <text>{{item.cat_name}}</text> /</view>
       <view class="details">
         <block wx:for="{{item.children}}" wx:for-item="e" wx:key="index">
-          <navigator>
+          <view bindtap="tiaozhuan" data-id="{{e.cat_id}}" class="navigator">
             <image src="{{e.cat_icon}}" mode="widthFix"></image>
             <view>{{e.cat_name}}</view>
-        </navigator>
+          </view>
         </block>
       </view> 
     </block>

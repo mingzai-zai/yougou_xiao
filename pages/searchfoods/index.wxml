@@ -11,8 +11,8 @@
 <!-- 商品列表展示 -->
 <view class="tip" wx:if="{{foodslist.length==0}}">抱歉，没有数据了喔,搜索其他</view>
 <block wx:for="{{foodslist}}" wx:key="index">
-  <view class="foods" wx:if="{{foodslist.length!=0}}">
-    <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
+  <view class="foods" wx:if="{{foodslist.length!=0}}" bindtap="tiaozhuan" data-id="{{item.goods_id}}">
+    <image mode="aspectFill" src="{{item.goods_small_logo}}" lazy-load="true"></image>
     <view class="content">
       <view class="top">{{item.goods_name}}</view>
       <view class="but">￥<text>{{item.goods_price}}</text></view>

@@ -53,7 +53,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-.details navigator{
+.details .navigator{
   display: flex;
   flex-direction: column;
   justify-content: center;

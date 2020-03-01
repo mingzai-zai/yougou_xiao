@@ -21,5 +21,10 @@ Page({
    this.setData({
      current:e.currentTarget.dataset.index
    })
- }
+ },
+  tiaozhuan(e){
+    wx.navigateTo({
+      url: `/pages/searchfoods/index?id=${e.currentTarget.dataset.id}`,
+    })
+  }
 })
