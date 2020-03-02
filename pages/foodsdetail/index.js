@@ -5,7 +5,7 @@ Page({
     detail:{}
   },
   onLoad(option){
-    // console.log(option.id)
+    console.log(option.id)
     axios({
       url:'/goods/detail',
       // data: { goods_id: option.id }

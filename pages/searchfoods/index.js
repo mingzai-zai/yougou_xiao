@@ -6,6 +6,8 @@ Page({
       query:'',
       pagenum:1,
       foodslist:[],
+      total:0,
+      loading:true,
   },
   typetab(e){
     this.setData({
@@ -22,12 +24,26 @@ Page({
   },
   // 下拉
   onReachBottom(){
+  if(!this.data.loading) {
+    //为了防止用户乱来，重复一直往上拉刷新，然后一直请求
     this.setData({
-      pagenum:++this.data.pagenum,
+      loading:true,
+    })
+    if (this.data.foodslist.length == this.data.total) {
+      wx.showToast({
+        title: '没哟数据了哦',
+        icon: 'success',
+        duration: 2000
+      })
+      return;
+    }
+    this.setData({
+      pagenum: ++this.data.pagenum,
     })
     this.getData();
     // console.log(this.data.query)
-    
+
+  }
   },
   tiaozhuan(e){
     wx.navigateTo({
@@ -46,34 +62,30 @@ Page({
   },
   // 封装
   getData(){
-    axios({
-      url: "/goods/search",
-      data: {
-        query: this.data.query,
-        pagenum: this.data.pagenum,
-        pagesize: 10,
-      }
-    }).then(res => {
-      // console.log(res)
-      if (res.data.message.goods.length === 0) {
-        wx.showToast({
-          title: '没哟数据了哦',
-          icon: 'success',
-          duration: 2000
+    setTimeout(()=>{
+      axios({
+        url: "/goods/search",
+        data: {
+          query: this.data.query,
+          pagenum: this.data.pagenum,
+          pagesize: 10,
+        }
+      }).then(res => {
+        // console.log(res)
+        let { goods } = res.data.message;
+        goods = goods.map(e => {
+          e.goods_price = parseInt(e.goods_price).toFixed(2)
+          return e;
         })
-        return;
-      }
-      let { goods } = res.data.message;
-      goods = goods.map(e => {
-        e.goods_price = parseInt(e.goods_price).toFixed(2)
-        return e;
+        // goods.forEach(e=>{
+        //   this.data.foodslist.push(e)
+        // })
+        this.setData({
+          foodslist: [...this.data.foodslist, ...goods],
+          total: res.data.message.total,
+          loading:false,
+        })
       })
-      // goods.forEach(e=>{
-      //   this.data.foodslist.push(e)
-      // })
-      this.setData({
-        foodslist: [...this.data.foodslist, ...goods],
-      })
-    })
+    },3000)
   }
 })
