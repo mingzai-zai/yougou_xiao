@@ -30,7 +30,7 @@
   width: 588rpx;
   padding-right: 60rpx;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 12px;
   border-right: 1px solid #efefef;
 }
 .miaoshu .shoucang{

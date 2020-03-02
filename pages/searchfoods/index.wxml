@@ -2,14 +2,14 @@
 <!-- 搜索框 -->
 <view class="search">
   <icon type="search" color="#ccc"/>
-  <input class="weui-input" placeholder="请输入所需要的商品" bindblur="aboutfoods"/>
+  <input class="weui-input" placeholder="请输入所需要的商品" bindblur="aboutfoods" value="{{query}}"/>
 </view>
 <!-- 列表分类 -->
 <view class="type">
   <view wx:for="{{ ['综合','销量','价格'] }}" wx:key="index" bindtap="typetab" data-index="{{index}}" class="{{current==index?'active':''}}">{{item}}<view wx:if="{{index==2}}" class="updown"></view></view>
 </view>
 <!-- 商品列表展示 -->
-<view class="tip" wx:if="{{foodslist.length==0}}">抱歉，没有数据了喔,搜索其他</view>
+<view class="tip" wx:if="{{foodslist.length==0}}">请稍等，数据加载中</view>
 <block wx:for="{{foodslist}}" wx:key="index">
   <view class="foods" wx:if="{{foodslist.length!=0}}" bindtap="tiaozhuan" data-id="{{item.goods_id}}">
     <image mode="aspectFill" src="{{item.goods_small_logo}}" lazy-load="true"></image>

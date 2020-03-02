@@ -9,7 +9,7 @@ Page({
     axios({
       url:'/goods/detail',
       // data: { goods_id: option.id }
-      data: { goods_id:57445}
+      data: { goods_id:57444}
     }).then(res=>{
       console.log(res);
       let {message} = res.data

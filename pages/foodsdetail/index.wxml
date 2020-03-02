@@ -3,19 +3,18 @@
   <!-- 轮播图 -->
   <view class="swiper">
     <swiper indicator-dots>
-        <swiper-item>
-          <image src="https://fc3tn.baidu.com/it/u=3929630184,8110791&fm=202&src=bqdata" mode="aspectFill"></image>
-        </swiper-item>
-        <swiper-item>
-          <image src="https://fc3tn.baidu.com/it/u=3929630184,8110791&fm=202&src=bqdata" mode="aspectFill"></image>
-        </swiper-item>
+        <block wx:for="{{detail.pics}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item.pics_big_url}}" mode="aspectFill"></image>
+          </swiper-item>
+        </block>
       </swiper>
   </view>
   <!-- 价格 -->
-  <view class="price">￥279</view>
+  <view class="price">￥{{detail.goods_price}}</view>
   <!-- 描述 -->
   <view class="miaoshu">
-    <view class="shuoming">初语2017秋装新欢潮牌女装加绒宽松BF风荣懒唯一女头套连帽上衣</view>
+    <view class="shuoming">{{detail.goods_name}}</view>
     <view class="shoucang">
       <view class="iconfont icon-shoucang"></view>
       <text>收藏</text>
@@ -28,7 +27,7 @@
   <!-- 隔一下 -->
   <view class="kong"></view>
   <!-- 下边部分 -->
-  <view wx:for="{{20}}" wx:key="index">113444444441</view>
+  <rich-text nodes="{{detail.goods_introduce}}"></rich-text>
  
 </view>
  <!-- 底部四个选项 -->

@@ -4,7 +4,6 @@ Page({
   data:{
     current:0,
       query:'',
-      cid:'',
       pagenum:1,
       foodslist:[],
   },
@@ -13,36 +12,50 @@ Page({
       current:e.currentTarget.dataset.index
     })
   },
+  // 搜索其他商品
   aboutfoods(e){
     this.setData({
         query:e.detail.value, 
     })
     // console.log(this.data.query)
-    axios({
-      url:"/goods/search",
-      data:this.data.query,
-    }).then(res=>{
-      let {goods} = res.data.message;
-      this.setData({
-        foodslist:goods,
-      })
+    this.getData();
+  },
+  // 下拉
+  onReachBottom(){
+    this.setData({
+      pagenum:++this.data.pagenum,
+    })
+    this.getData();
+    // console.log(this.data.query)
+    
+  },
+  tiaozhuan(e){
+    wx.navigateTo({
+      url: `/pages/foodsdetail/index?id=${e.currentTarget.dataset.id}`,
     })
   },
-  onReachBottom(){
-    let page =1;
-    this.setData({
-      pagenum:page+this.data.pagenum,
-    })
-    // console.log(this.data.query)
+  // 刚开始加载时候
+  onLoad(option){
+    // console.log(option.keyword)
+    if (option.keyword){
+     this.setData({
+       query: option.keyword,
+     })
+     this.getData();
+   }
+  },
+  // 封装
+  getData(){
     axios({
       url: "/goods/search",
       data: {
         query: this.data.query,
-        pagenum:this.data.pagenum,
+        pagenum: this.data.pagenum,
+        pagesize: 10,
       }
     }).then(res => {
       // console.log(res)
-      if(res.data.message.total===0) {
+      if (res.data.message.goods.length === 0) {
         wx.showToast({
           title: '没哟数据了哦',
           icon: 'success',
@@ -51,31 +64,15 @@ Page({
         return;
       }
       let { goods } = res.data.message;
-      goods.forEach(e=>{
-        this.data.foodslist.push(e)
+      goods = goods.map(e => {
+        e.goods_price = parseInt(e.goods_price).toFixed(2)
+        return e;
       })
+      // goods.forEach(e=>{
+      //   this.data.foodslist.push(e)
+      // })
       this.setData({
-        foodslist:this.data.foodslist,
-      })
-    })
-  },
-  tiaozhuan(e){
-    wx.navigateTo({
-      url: `/pages/foodsdetail/index?id=${e.currentTarget.dataset.id}`,
-    })
-  },
-  onLoad(option){
-    // console.log(option.id)
-    this.setData({
-      cid: option.id,
-    })
-    axios({
-      url:'/goods/search',
-      data:this.data.cid
-    }).then(res=>{
-      let { goods } = res.data.message;
-      this.setData({
-        foodslist: goods,
+        foodslist: [...this.data.foodslist, ...goods],
       })
     })
   }

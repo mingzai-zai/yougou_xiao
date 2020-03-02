@@ -24,7 +24,7 @@ Page({
  },
   tiaozhuan(e){
     wx.navigateTo({
-      url: `/pages/searchfoods/index?id=${e.currentTarget.dataset.id}`,
+      url: `/pages/searchfoods/index?keyword=${e.currentTarget.dataset.keyword}`,
     })
   }
 })
