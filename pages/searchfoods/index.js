@@ -17,7 +17,8 @@ Page({
   // 搜索其他商品
   aboutfoods(e){
     this.setData({
-        query:e.detail.value, 
+        query:e.detail.value,
+        foodslist:[],
     })
     // console.log(this.data.query)
     this.getData();

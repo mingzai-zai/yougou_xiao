@@ -22,6 +22,6 @@
   </view>
   <!-- 搜索历史的列表 -->
   <view class="list">
-    <view class="listson" wx:for="{{historylist}}" wx:key="index">{{item}}</view>
+    <view class="listson" wx:for="{{historylist}}" wx:key="index" bindtap="handleto" data-value="{{item}}">{{item}}</view>
   </view>
 </view>

@@ -90,5 +90,17 @@ Page({
     this.setData({
       historylist:arr
     })
-  }
+  },
+  //点击历史记录跳转
+  handleto(e){
+    wx.navigateTo({
+      url: `/pages/searchfoods/index?keyword=${e.currentTarget.dataset.value}`
+    })
+    let arr = this.data.historylist
+    arr.unshift(e.currentTarget.dataset.value)
+    arr = Array.from([...new Set(arr)])
+    // arr = [...new Set(arr)]
+    wx.setStorageSync("history", arr)
+  },
+  //失焦时候
 })
