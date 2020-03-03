@@ -5,14 +5,14 @@
   <!-- 搜索框 -->
     <view class="search-input">
       <icon type="search" size="20"></icon>
-      <input placeholder="请输入你想要的商品" bindinput="c_inputvalue" value="{{inputvalue}}"></input>
+      <input placeholder="请输入你想要的商品" bindinput="c_inputvalue" value="{{inputvalue}}" bindconfirm="confirm"></input>
     </view>
     <!-- 取消按钮 -->
     <view class="btn" wx:if="{{inputvalue?true:false}}" bindtap="cancel">取消</view>
     <!-- 展示获取回来的数据列表 -->
     <scroll-view
  class="showdata" wx:if="{{showlist}}" scroll-y>
-      <view class="list" wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}</view>
+      <navigator url="/pages/searchfoods/index?keyword={{item.goods_name}}"    class="list" wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}                 </navigator>
     </scroll-view>
   </view>
   <!-- 历史搜索 -->
@@ -22,10 +22,6 @@
   </view>
   <!-- 搜索历史的列表 -->
   <view class="list">
-    <view class="listson">小米</view>
-    <view class="listson">小米123</view>
-    <view class="listson">小米123</view>
-    <view class="listson">小米11</view>
-    <view class="listson">小米123213</view>
+    <view class="listson" wx:for="{{historylist}}" wx:key="index">{{item}}</view>
   </view>
 </view>

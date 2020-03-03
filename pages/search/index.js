@@ -12,6 +12,8 @@ Page({
     loading:false,
     //保存最后请求的inputvalue
     lastvalue:'',
+    //存放本地history数据
+    historylist:[]
   },
 //内容发生改变的时候
   c_inputvalue(e){
@@ -64,6 +66,29 @@ Page({
       inputvalue: '',
       searchlist: [],
       showlist: false,
+    })
+  },
+  // 点击确认时候
+  confirm(){
+    // wx.redirectTo
+    wx.reLaunch({
+      url: `/pages/searchfoods/index?keyword=${this.data.inputvalue}`
+    })
+    let arr = this.data.historylist
+    arr.unshift(this.data.inputvalue)
+    arr =Array.from([...new Set(arr)])
+    // arr = [...new Set(arr)]
+    wx.setStorageSync("history", arr)
+  },
+  // 一加载就显示本地存储的history
+  onLoad(){
+    let arr = wx.getStorageSync('history')
+    if (!Array.isArray(arr)) {
+      //如果用短路的话存的是对象呢
+      arr = []
+    }
+    this.setData({
+      historylist:arr
     })
   }
 })
