@@ -103,4 +103,16 @@ Page({
     wx.setStorageSync("history", arr)
   },
   //失焦时候
+  shijiao(){
+    this.setData({
+      showlist: false,
+    })
+  },
+  //清楚历史记录
+  qingchu(){
+    wx.setStorageSync("history", []);
+    this.setData({
+      historylist:[]
+    })
+  }
 })

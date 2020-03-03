@@ -5,7 +5,7 @@
   <!-- 搜索框 -->
     <view class="search-input">
       <icon type="search" size="20"></icon>
-      <input placeholder="请输入你想要的商品" bindinput="c_inputvalue" value="{{inputvalue}}" bindconfirm="confirm"></input>
+      <input placeholder="请输入你想要的商品" bindinput="c_inputvalue" value="{{inputvalue}}" bindconfirm="confirm" bindblur="shijiao"></input>
     </view>
     <!-- 取消按钮 -->
     <view class="btn" wx:if="{{inputvalue?true:false}}" bindtap="cancel">取消</view>
@@ -18,7 +18,7 @@
   <!-- 历史搜索 -->
   <view class="history">
     <view>历史搜索</view>
-    <icon type="clear" size="14"></icon>
+    <icon type="clear" size="14" bindtap="qingchu"></icon>
   </view>
   <!-- 搜索历史的列表 -->
   <view class="list">
