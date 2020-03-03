@@ -7,7 +7,7 @@ Page({
       pagenum:1,
       foodslist:[],
       total:0,
-      loading:true,
+      loading:false,
   },
   typetab(e){
     this.setData({

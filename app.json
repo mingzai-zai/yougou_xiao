@@ -5,7 +5,8 @@
     "pages/shopcar/index",
     "pages/myself/index",
     "pages/searchfoods/index",
-    "pages/foodsdetail/index"
+    "pages/foodsdetail/index",
+    "pages/search/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
