@@ -1,5 +1,6 @@
 /* pages/search/index.wxss */
 .top{
+  position: relative;
   height: 100rpx;
   background: #efefef;
   display: flex;
@@ -33,7 +34,32 @@
   text-align: center;
   line-height: 59rpx;
 }
-
+/* 获取数据列表的展示 */
+.top .showdata {
+  position: absolute;
+  left: 0;
+  top: 100rpx;
+  width: 94%;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  z-index: 2;
+  background: #fff;
+  margin: 0 25rpx;
+  height: 480rpx;
+}
+.showdata .list {
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp:1;
+  border-bottom: 1px solid #ccc;
+}
+.showdata .list:last-child{
+  border: 0;
+}
 /* 历史搜索 */
 .history {
   padding: 30rpx 25rpx;
