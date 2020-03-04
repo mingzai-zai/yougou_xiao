@@ -28,6 +28,11 @@ Page({
       current: e.currentTarget.dataset.src, // 当前显示图片的http链接
       urls: arr // 需要预览的图片http链接列表
     })
+  },
+  // 点击跳转到tabbar的购物车页面
+  tocarpage(){
+    wx.switchTab({
+      url: '/pages/shopcar/index'
+    })
   }
-  
 })
