@@ -17,6 +17,17 @@ Page({
         detail:message
       })
     })
+  },
+  //点击放大图片
+  fangda(e){
+    let arr = this.data.detail.pics.map(e=>{
+      return e.pics_big_url
+    })
+    // console.log(e.currentTarget.dataset.src)
+    wx.previewImage({
+      current: e.currentTarget.dataset.src, // 当前显示图片的http链接
+      urls: arr // 需要预览的图片http链接列表
+    })
   }
   
 })
