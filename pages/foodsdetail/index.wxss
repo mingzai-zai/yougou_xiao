@@ -94,3 +94,24 @@
 .tab .buy{
   background: #ff2d4a;
 }
+.bottom {
+  display: flex;
+  height: 90rpx;
+}
+.bottom>view{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.active{
+  background:pink; 
+}
+.type{
+  display: flex;
+  padding: 10rpx 25rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}

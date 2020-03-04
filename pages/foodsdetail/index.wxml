@@ -27,8 +27,20 @@
   <!-- 隔一下 -->
   <view class="kong"></view>
   <!-- 下边部分 -->
-  <rich-text nodes="{{detail.goods_introduce}}"></rich-text>
- 
+  <view class="bottom">
+    <block wx:for="{{ ['介绍','类型'] }}" wx:key="index">
+      <view class="{{ index==current?'active':'' }}" bindtap="qiehuan" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+  <rich-text nodes="{{detail.goods_introduce}}" wx:if="{{current==0}}"></rich-text>
+  <view wx:if="{{ current==1 }}">
+    <block wx:for="{{detail.attrs}}" wx:key="index">
+      <view class="type">
+        <text>{{item.attr_name}}</text>
+        <view>{{item.attr_value}}</view>
+      </view>
+    </block>
+  </view>
 </view>
  <!-- 底部四个选项 -->
 <view class="tab">

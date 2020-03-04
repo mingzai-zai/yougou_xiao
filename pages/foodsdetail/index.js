@@ -2,16 +2,17 @@
 import axios from '../../utils/axios.js'
 Page({
   data:{
-    detail:{}
+    detail:{},
+    current:0
   },
   onLoad(option){
-    console.log(option.id)
+    // console.log(option.id)
     axios({
       url:'/goods/detail',
-      // data: { goods_id: option.id }
-      data: { goods_id:57444}
+      data: { goods_id: option.id }
+      // data: { goods_id:57444}
     }).then(res=>{
-      console.log(res);
+      // console.log(res);
       let {message} = res.data
       this.setData({
         detail:message
@@ -33,6 +34,12 @@ Page({
   tocarpage(){
     wx.switchTab({
       url: '/pages/shopcar/index'
+    })
+  },
+  // tab栏的切换
+  qiehuan(e){
+    this.setData({
+      current:e.target.dataset.index
     })
   }
 })
