@@ -1,2 +1,105 @@
 <!--pages/shopcar/index.wxml-->
-<text>pages/shopcar/index.wxml</text>
+<view class="shopcar">
+  <!-- 添加收货地址按钮 -->
+  <view class="address">
+    <navigator>添加收货地址</navigator>
+  </view>
+  <!-- 收货地址的显示 -->
+  <view class="showaddress">
+    <!-- 收货人和电话 -->
+    <view class="name_phone">
+      <view class="name">
+        收货人： 明仔
+      </view>
+      <view class="phone">
+        1008611111
+        <text>></text>
+      </view>
+    </view>
+    <!-- 收货人地址 -->
+    <view class="address">
+        收货地址：广东省广州市唔知边
+    </view>
+  </view>
+  <!-- 红蓝条杠 -->
+  <image src="../../images/gang.jpg" class="gang"></image>
+  <!-- 空的一个背景 -->
+  <view class="kong"></view>
+  <!-- 选择的商品 -->
+  <view class="foods">
+    <!-- 商品的店铺 -->
+    <view class="title">
+      <view class="iconfont icon-dianpu"></view>
+      <text>优购生活馆</text>
+    </view>
+    <!-- 商品的详情 -->
+    <view class="detail">
+      <view class="choose">
+        <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
+        <view class="quan"></view>
+      </view>
+      <view class="pic">
+        <image src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="details">
+        <view class="name">初语2017秋装新欢潮牌不女装加绒宽松BF丰荣懒唯一女头套连帽上衣</view>
+        <view class="price-num">
+          <view class="price">￥<text>279.00</text></view>
+          <view class="num">
+            <view>-</view>
+            <text>3</text>
+            <view>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 隔开下一个店铺 -->
+    <view class="gekai"></view>
+  </view>
+  <!-- 选择的商品 -->
+  <view class="foods">
+    <!-- 商品的店铺 -->
+    <view class="title">
+      <view class="iconfont icon-dianpu"></view>
+      <text>优购生活馆</text>
+    </view>
+    <!-- 商品的详情 -->
+    <view class="detail">
+      <view class="choose">
+        <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
+        <view class="quan"></view>
+      </view>
+      <view class="pic">
+        <image src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="details">
+        <view class="name">初语2017秋装新欢潮牌不女装加绒宽松BF丰荣懒唯一女头套连帽上衣</view>
+        <view class="price-num">
+          <view class="price">￥<text>279.00</text></view>
+          <view class="num">
+            <view>-</view>
+            <text>3</text>
+            <view>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 隔开下一个店铺 -->
+    <view class="gekai"></view>
+  </view>
+</view>
+<!-- 底部的结算框 -->
+<view class="bottom">
+  <view class="choose">
+    <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
+    <view class="quan"></view>
+    <text>全选</text>
+  </view>
+  <view class="total">
+    <view class="money">
+      合计：<text>￥<text class="qian">144110.00</text></text>
+    </view>
+    <view class="contain">包含运费</view>
+  </view>
+  <view class="jiesuan">结算(3)</view>
+</view>
