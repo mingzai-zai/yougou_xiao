@@ -3,6 +3,7 @@ Page({
   data:{
     useraddress:{},
     foods:[],
+    total:0
   },
   //一开始加载地址
   onLoad(){
@@ -32,6 +33,17 @@ Page({
     let arr = wx.getStorageSync('foods') || [];
     this.setData({
       foods:arr,
+    })
+    this.suantotal();
+  },
+  // 计算总价格
+  suantotal(){
+    let price=0;
+    this.data.foods.forEach(e=>{
+      price += e.number * e.price;
+    })
+    this.setData({
+      total:price
     })
   }
 })

@@ -68,9 +68,9 @@
   </view>
   <view class="total">
     <view class="money">
-      合计：<text>￥<text class="qian">144110.00</text></text>
+      合计：<text>￥<text class="qian">{{total}}</text></text>
     </view>
     <view class="contain">包含运费</view>
   </view>
-  <view class="jiesuan">结算(3)</view>
+  <view class="jiesuan">结算</view>
 </view>
