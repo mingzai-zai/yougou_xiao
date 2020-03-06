@@ -33,26 +33,28 @@
       <text>优购生活馆</text>
     </view>
     <!-- 商品的详情 -->
-    <view class="detail">
-      <view class="choose">
-        <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
-        <view class="quan"></view>
-      </view>
-      <view class="pic">
-        <image src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg" mode="aspectFill"></image>
-      </view>
-      <view class="details">
-        <view class="name">初语2017秋装新欢潮牌不女装加绒宽松BF丰荣懒唯一女头套连帽上衣</view>
-        <view class="price-num">
-          <view class="price">￥<text>279.00</text></view>
-          <view class="num">
-            <view>-</view>
-            <input value="1">3</input>
-            <view>+</view>
+    <block wx:for="{{foods}}" wx:key="index">
+      <view class="detail">
+        <view class="choose">
+          <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
+          <view class="quan"></view>
+        </view>
+        <view class="pic">
+          <image src="{{item.logo}}" mode="aspectFill"></image>
+        </view>
+        <view class="details">
+          <view class="name">{{item.title}}</view>
+          <view class="price-num">
+            <view class="price">￥<text>{{item.price}}</text></view>
+            <view class="num">
+              <view>-</view>
+              <input value="{{item.number}}"></input>
+              <view>+</view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
+    </block>
     <!-- 隔开下一个店铺 -->
     <view class="gekai"></view>
   </view>

@@ -1,7 +1,8 @@
 // pages/shopcar/index.js
 Page({
   data:{
-    useraddress:{}
+    useraddress:{},
+    foods:[],
   },
   //一开始加载地址
   onLoad(){
@@ -9,6 +10,7 @@ Page({
     this.setData({
       useraddress:userinfo
     })
+    //不能在onload里面写，只执行一次等等如果改变了数量，就不能及时刷新
   },
   //登录获取地址
   addaddress(){
@@ -23,6 +25,13 @@ Page({
         })
         wx.setStorageSync('userinfo', this.data.useraddress)
       }
+    })
+  },
+  //每次显示这个页面时候就展示而且能几时刷新
+  onShow(){
+    let arr = wx.getStorageSync('foods') || [];
+    this.setData({
+      foods:arr,
     })
   }
 })
