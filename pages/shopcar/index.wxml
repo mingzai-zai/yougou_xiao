@@ -47,9 +47,10 @@
           <view class="price-num">
             <view class="price">￥<text>{{item.price}}</text></view>
             <view class="num">
-              <view>-</view>
-              <input value="{{item.number}}"></input>
-              <view>+</view>
+              <view bindtap="changenumber" data-index="{{index}}" data-num="{{-1}}">-</view>
+              <input value="{{item.number}}" type="number"></input>
+              <!-- 这里不是vue可以在标签里面处理事件，所以要找到伱点击的是谁 -->
+              <view bindtap="changenumber" data-index="{{index}}" data-num="{{1}}">+</view>
             </view>
           </view>
         </view>

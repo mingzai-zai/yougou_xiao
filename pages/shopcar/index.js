@@ -45,5 +45,41 @@ Page({
     this.setData({
       total:price
     })
+    //每次改变都调用了这个方法，所以这里保存着每次改变数量就好了
+    wx.setStorageSync('foods', this.data.foods)
+  },
+  // 增加数量按钮
+  changenumber(e){
+    let {index,num}= e.target.dataset;
+    // console.log(this.data.foods[index])
+    // 如果是先计算再去判断的话就要判断就要<1时候而且取消按键时候值要等于1或者加1因为计算完是0取消要返回原来1这个值
+    // console.log(this.data.foods[index].number)
+    this.data.foods[index].number += num;
+    // if (this.data.foods[index].number==1) return;
+    if (this.data.foods[index].number<1) {
+      wx.showModal({
+        title: '提示',
+        content: '是否要删除改商品',
+        success:res=> {
+          if (res.confirm) {
+            //此时外面的setData已经设置完成了里面的数据没有更新，这里是异步队列
+            // console.log('用户点击确定')
+            this.data.foods.splice(index,1)
+          } else if (res.cancel) {
+            // console.log('用户点击取消')
+            this.data.foods[index].number = 1;
+          }
+          this.setData({
+            foods:this.data.foods,
+          })
+        }
+      })
+    }
+    // 想要页面显示就必须要this.setData
+    this.setData({
+      foods:this.data.foods
+    })
+    //一改变就开始计算
+    this.suantotal();
   }
 })
