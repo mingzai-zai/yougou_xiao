@@ -65,8 +65,10 @@
 <!-- 底部的结算框 -->
 <view class="bottom">
   <view class="choose">
-    <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
-    <view class="quan"></view>
+    <view bindtap="quanxuan">
+      <icon type="success" color="red" size="15" wx:if="{{quanxuanflag}}"></icon>
+      <view class="quan" wx:if="{{!quanxuanflag}}"></view>
+    </view>
     <text>全选</text>
   </view>
   <view class="total">

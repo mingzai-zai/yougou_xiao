@@ -3,7 +3,9 @@ Page({
   data:{
     useraddress:{},
     foods:[],
-    total:0
+    total:0,
+    //默认可以全选
+    quanxuanflag:true
   },
   //一开始加载地址
   onLoad(){
@@ -39,13 +41,17 @@ Page({
   // 计算总价格
   suantotal(){
     let price=0;
+    let trueprice=0;
     this.data.foods.forEach(e=>{
+      trueprice += e.number * e.price;
       if(e.flag) {
         price += e.number * e.price;
       }
     })
     this.setData({
-      total:price
+      total:price,
+      //判定展示时候是否能全选
+      quanxuanflag: trueprice==price,
     })
     //每次改变都调用了这个方法，所以这里保存着每次改变数量就好了
     wx.setStorageSync('foods', this.data.foods)
@@ -94,4 +100,26 @@ Page({
     })
     this.suantotal();
   },
+  //全选状态
+  quanxuan(){
+    this.data.quanxuanflag = !this.data.quanxuanflag;
+    if(this.data.quanxuanflag) {
+      this.data.foods.forEach(e=>{
+        e.flag=true;
+      })
+      this.setData({
+        quanxuanflag:true,
+        foods:this.data.foods
+      })
+    }else {
+      this.data.foods.forEach(e => {
+        e.flag = false;
+      })
+      this.setData({
+        quanxuanflag: false,
+        foods: this.data.foods
+      })
+    }
+    this.suantotal();
+  }
 })
