@@ -40,7 +40,9 @@ Page({
   suantotal(){
     let price=0;
     this.data.foods.forEach(e=>{
-      price += e.number * e.price;
+      if(e.flag) {
+        price += e.number * e.price;
+      }
     })
     this.setData({
       total:price
@@ -81,5 +83,15 @@ Page({
     })
     //一改变就开始计算
     this.suantotal();
-  }
+  },
+  // 商品的选中状态
+  choosebuy(e){
+    // console.log(e)
+    let {index} = e.currentTarget.dataset;
+    this.data.foods[index].flag = !this.data.foods[index].flag;
+    this.setData({
+      foods:this.data.foods
+    })
+    this.suantotal();
+  },
 })

@@ -60,6 +60,8 @@ Page({
         logo: this.data.detail.goods_small_logo,
         //默认一开始数量为1
         number: 1,
+        //默认一开始是选中状态
+        flag:true,
       })
     }
     

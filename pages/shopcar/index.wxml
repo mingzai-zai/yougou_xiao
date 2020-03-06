@@ -36,8 +36,10 @@
     <block wx:for="{{foods}}" wx:key="index">
       <view class="detail">
         <view class="choose">
-          <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
-          <view class="quan"></view>
+          <view bindtap="choosebuy" data-index="{{index}}">
+            <icon type="success" color="red" size="15" wx:if="{{item.flag}}"></icon>
+            <view class="quan"  wx:if="{{!item.flag}}"></view>
+          </view>
         </view>
         <view class="pic">
           <image src="{{item.logo}}" mode="aspectFill"></image>
