@@ -41,5 +41,28 @@ Page({
     this.setData({
       current:e.target.dataset.index
     })
+  },
+  //加入购物车
+  joincar(){
+    let arr = wx.getStorageSync('foods') || [];
+    let obj = arr.find(e=>{
+      return e.id == this.data.detail.goods_id
+    })
+    // console.log(obj);没有的话返回undefined
+    if(obj) {
+      obj.number +=1;
+    }else {
+      arr.unshift({
+        //要有标识
+        id: this.data.detail.goods_id,
+        title: this.data.detail.goods_name,
+        price: this.data.detail.goods_price,
+        logo: this.data.detail.goods_small_logo,
+        //默认一开始数量为1
+        number: 1,
+      })
+    }
+    
+    wx.setStorageSync('foods',arr)
   }
 })
