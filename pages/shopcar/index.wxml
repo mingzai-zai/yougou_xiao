@@ -1,24 +1,24 @@
 <!--pages/shopcar/index.wxml-->
 <view class="shopcar">
   <!-- 添加收货地址按钮 -->
-  <view class="address">
-    <navigator>添加收货地址</navigator>
+  <view class="address" wx:if="{{!useraddress.username}}">
+    <view bindtap="addaddress">添加收货地址</view>
   </view>
   <!-- 收货地址的显示 -->
-  <view class="showaddress">
+  <view class="showaddress" wx:if="{{useraddress.username}}">
     <!-- 收货人和电话 -->
     <view class="name_phone">
       <view class="name">
-        收货人： 明仔
+        收货人： {{useraddress.username}}
       </view>
       <view class="phone">
-        1008611111
+        {{useraddress.phone}}
         <text>></text>
       </view>
     </view>
     <!-- 收货人地址 -->
     <view class="address">
-        收货地址：广东省广州市唔知边
+        收货地址：{{useraddress.address}}
     </view>
   </view>
   <!-- 红蓝条杠 -->
@@ -47,38 +47,7 @@
           <view class="price">￥<text>279.00</text></view>
           <view class="num">
             <view>-</view>
-            <text>3</text>
-            <view>+</view>
-          </view>
-        </view>
-      </view>
-    </view>
-    <!-- 隔开下一个店铺 -->
-    <view class="gekai"></view>
-  </view>
-  <!-- 选择的商品 -->
-  <view class="foods">
-    <!-- 商品的店铺 -->
-    <view class="title">
-      <view class="iconfont icon-dianpu"></view>
-      <text>优购生活馆</text>
-    </view>
-    <!-- 商品的详情 -->
-    <view class="detail">
-      <view class="choose">
-        <icon type="success" color="red" size="18" wx:if="{{false}}"></icon>
-        <view class="quan"></view>
-      </view>
-      <view class="pic">
-        <image src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg" mode="aspectFill"></image>
-      </view>
-      <view class="details">
-        <view class="name">初语2017秋装新欢潮牌不女装加绒宽松BF丰荣懒唯一女头套连帽上衣</view>
-        <view class="price-num">
-          <view class="price">￥<text>279.00</text></view>
-          <view class="num">
-            <view>-</view>
-            <text>3</text>
+            <input value="1">3</input>
             <view>+</view>
           </view>
         </view>

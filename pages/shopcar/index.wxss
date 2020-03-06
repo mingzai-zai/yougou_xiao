@@ -2,7 +2,7 @@
 .shopcar {
   height: 100vh;
 }
-.address navigator {
+.address view {
   border: 1px solid green;
   width: 60%;
   text-align: center;
@@ -27,13 +27,17 @@
   font-size: 18px;
 }
 .showaddress .address{
-  height: 80rpx;
-  line-height: 80rpx;
-  margin-bottom: 20rpx;
+  height: 50rpx;
+  margin-bottom: 25rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow : hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 /* 红蓝条杠 */
 .gang{
-  height: 10rpx;
+  height: 15rpx;
   display: block;
 }
 .kong{
@@ -114,8 +118,10 @@
   font-size: 20px;
   border: 2px solid #555
 }
-.price-num .num text {
-  margin: 0 25rpx;
+.price-num .num input {
+  width: 20px;
+  padding: 0 8rpx 0 25rpx;
+  font-size: 12px;
 }
 .gekai{
   height: 60rpx;
