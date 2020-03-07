@@ -78,7 +78,7 @@
 .back{
   position: fixed;
   right: 20rpx;
-  bottom: 40rpx;
+  bottom: 130rpx;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

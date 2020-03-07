@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container custom_tabbar">
   <!-- 搜索框 -->
   <search></search>
   <!-- 轮播图 -->

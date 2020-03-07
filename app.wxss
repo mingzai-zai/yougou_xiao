@@ -1,2 +1,7 @@
 /**app.wxss**/
-@import "common/icon.wxss"
+@import "common/icon.wxss";
+
+.custom_tabbar{
+  padding-bottom: 48px;
+  box-sizing: border-box;
+}

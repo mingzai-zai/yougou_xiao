@@ -26,5 +26,13 @@ Page({
     wx.navigateTo({
       url: `/pages/searchfoods/index?keyword=${e.currentTarget.dataset.keyword}`,
     })
+  },
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 1
+      })
+    }
   }
 })

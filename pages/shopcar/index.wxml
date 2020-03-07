@@ -1,5 +1,5 @@
 <!--pages/shopcar/index.wxml-->
-<view class="shopcar">
+<view class="shopcar custom_tabbar">
   <!-- 添加收货地址按钮 -->
   <view class="address" wx:if="{{!useraddress.username}}">
     <view bindtap="addaddress">添加收货地址</view>

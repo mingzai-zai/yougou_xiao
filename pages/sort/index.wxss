@@ -64,5 +64,5 @@
   box-sizing: border-box;
 }
 .details image{
-  width: 175rpx;
+  width: 170rpx;
 }

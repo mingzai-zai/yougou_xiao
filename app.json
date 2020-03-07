@@ -17,10 +17,10 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar":{
+    "custom": true,
     "color":"#000",
     "selectedColor":"#ff2d4a",
     "backgroundColor":"#fff",
-    "borderStyle":"black",
     "list":[
       {
         "text":"首页",

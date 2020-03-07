@@ -32,6 +32,12 @@ Page({
   },
   //每次显示这个页面时候就展示而且能几时刷新
   onShow(){
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
     let arr = wx.getStorageSync('foods') || [];
     this.setData({
       foods:arr,
