@@ -99,27 +99,22 @@ Page({
       foods:this.data.foods
     })
     this.suantotal();
+    // 全选的另外一个做法
+    // let select = this.data.foods.some(e=>{
+    //   return !e.flag
+    // })
+    // console.log(!select)
   },
   //全选状态
   quanxuan(){
     this.data.quanxuanflag = !this.data.quanxuanflag;
-    if(this.data.quanxuanflag) {
       this.data.foods.forEach(e=>{
-        e.flag=true;
+        e.flag = this.data.quanxuanflag;
       })
       this.setData({
-        quanxuanflag:true,
+        quanxuanflag: this.data.quanxuanflag,
         foods:this.data.foods
       })
-    }else {
-      this.data.foods.forEach(e => {
-        e.flag = false;
-      })
-      this.setData({
-        quanxuanflag: false,
-        foods: this.data.foods
-      })
-    }
-    this.suantotal();
+      this.suantotal();
   }
 })
