@@ -1,2 +1,74 @@
 <!--pages/myself/index.wxml-->
-<view class="custom_tabbar"></view>
+<view class="personal custom_tabbar">
+  <!-- 头部登录和头像 -->
+  <view class="top">
+    <view class="shezhi_tou">
+      <view class="shezhi iconfont icon-icon_set_up"></view>
+      <image mode="aspectFill" src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg"></image>
+      <view class="msg iconfont icon-dakaihuihua"></view>
+    </view>
+    <view class="login">轻松登录/注册</view>
+  </view>
+  <!-- 下半部分 -->
+  <view class="bottom">
+    <!-- 店铺商品足迹 -->
+    <view class="liulan">
+      <view wx:for="{{4}}" wx:key="index">
+        <view class="cishu">0</view>
+        <view class="cishu">收藏的店铺</view>
+      </view>
+    </view>
+
+    <!-- 我的订单 -->
+    <view class="detail">
+      <view class="dingdan">我的订单</view>
+      <view class="alldetail">
+        <view>
+          <view class="iconfont icon-daifukuan"></view>
+          <view>待付款</view>
+        </view>
+        <view>
+          <view class="iconfont icon-icon3"></view>
+          <view>待收货</view>
+        </view>
+        <view>
+          <view class="iconfont icon-icon5"></view>
+          <view>退款/退货</view>
+        </view>
+        <view>
+          <view class="iconfont icon-icon_order"></view>
+          <view>全部订单</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 收货地址 -->
+    <view class="dizhi">
+      <view class="address">
+        <view>收货地址管理</view>
+        <text>></text>
+      </view>
+    </view>
+
+    <!-- 客服意见关于 -->
+    <view class="threeabout">
+      <view class="kefu address">
+        <view >联系客服</view>
+        <text>400-618-4000</text>
+      </view>
+      <view class="yijian address">
+        <view >意见反馈</view>
+        <text>></text>
+      </view>
+      <view class="about address">
+        <view >关于我们</view>
+        <text>></text>
+      </view>
+    </view>
+
+    <!-- 应用推荐给别人 -->
+    <view class="share address">
+      <view>把应用推荐给其他人</view>
+    </view>
+  </view>
+</view>

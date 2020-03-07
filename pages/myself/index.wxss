@@ -1,1 +1,103 @@
-/* pages/myself/index.wxss */
+.top{
+  width: 100%;
+  height: 420rpx;
+  background: #ff2d4a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.shezhi_tou {
+  display: flex;
+  align-items: center;
+}
+.shezhi_tou image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 25rpx 50rpx;
+}
+.login,.shezhi,.msg {
+  color: #fff;
+}
+/* 下半部分 */
+.bottom {
+  padding: 0 25rpx 25rpx 25rpx;
+  background: #ccc;
+  border-top: 1px solid transparent;
+}
+/* 店铺商品足迹 */
+.liulan{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 110rpx;
+  width: 100%;
+  background: #fff;
+  font-size: 12px;
+  color: #999;
+  margin-top: -25rpx;
+}
+.liulan > view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 我的订单 */
+.detail{
+  background: #fff;
+  margin-top: 25rpx;
+}
+.detail .dingdan{
+  height: 82rpx;
+  line-height: 82rpx;
+  padding-left: 25rpx;
+  border-bottom: 1px solid #efefef;
+}
+.alldetail{
+  height: 164rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  color: #454545;
+}
+.alldetail > view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.alldetail > view .iconfont {
+  font-size: 48rpx;
+  color: #ff2d4a;
+  margin-bottom: 10rpx;
+}
+/* 收货地址 */
+.dizhi,.threeabout,.share{
+  margin-top: 25rpx;
+}
+.address {
+  height: 82rpx;
+  padding: 0 25rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #454545;
+}
+.address text {
+  color: #ddd;
+}
+.threeabout{
+  background: #fff;
+  padding: 0 25rpx;
+}
+.threeabout .address {
+  padding: 0;
+  border-bottom: 1px solid #efefef;
+}
+.threeabout .address:last-child{
+  border: 0;
+}
