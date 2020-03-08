@@ -35,7 +35,8 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 2
+        selected: 2,
+        number: (wx.getStorageSync('foods') || []).length
       })
     }
     let arr = wx.getStorageSync('foods') || [];
@@ -86,6 +87,8 @@ Page({
           this.setData({
             foods:this.data.foods,
           })
+          //本地并没有删除掉，因为这里是异步，外面的this.suantotal早已完成
+          this.suantotal();         
         }
       })
     }
