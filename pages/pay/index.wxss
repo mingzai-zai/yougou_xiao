@@ -1,0 +1,122 @@
+/* 添加收货地址按钮 */
+.shopcar {
+  height: 100vh;
+  overflow: auto;
+}
+.address view {
+  border: 1px solid green;
+  width: 60%;
+  text-align: center;
+  padding: 25rpx 0;
+  color: green;
+  border-radius: 4px;
+  margin: 25rpx auto;
+}
+/* 显示收货人电话地址 */
+.showaddress{
+  padding: 0 25rpx;
+}
+.showaddress .name_phone{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  justify-content: space-between;
+}
+.name_phone .phone text{
+  margin-left: 30rpx;
+  color: #ccc;
+  font-size: 18px;
+}
+.showaddress .address{
+  height: 50rpx;
+  margin-bottom: 25rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow : hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+/* 红蓝条杠 */
+.gang{
+  width: 100%;
+  height: 15rpx;
+  display: block;
+}
+.kong{
+  height: 20rpx;
+  background: #efefef;
+}
+/* 商品 */
+.foods:last-child{
+  padding-bottom: 90rpx;
+}
+.foods .title{
+  display: flex;
+  padding: 25rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+.foods .title view {
+  font-size: 16px;
+  color: #ccc;
+  margin-right: 4px;
+}
+.detail{
+  padding: 25rpx;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  font-size: 14px;
+}
+.bottom .choose .quan {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+.pic {
+  margin-right: 7rpx;
+}
+.pic image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 8rpx;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.details .name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.details .price {
+  color: #ff2d4a;
+}
+.details .price text{
+  font-size: 20px;
+}
+.price-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gekai{
+  height: 60rpx;
+  background: #efefef;
+}
+/* 底部显示总价 */
+.buttom {
+  font-size: 16px;
+  margin: 40rpx 80rpx;
+}
+.buttom text{
+  color: #ff0000;
+  font-size: 20px;
+}
+button{
+  width: 90%!important;
+}

@@ -125,5 +125,10 @@ Page({
         foods:this.data.foods
       })
       this.suantotal();
+  },
+  topay(){
+    wx.navigateTo({
+      url: '/pages/pay/index',
+    })
   }
 })

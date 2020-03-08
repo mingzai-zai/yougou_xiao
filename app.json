@@ -6,7 +6,9 @@
     "pages/myself/index",
     "pages/searchfoods/index",
     "pages/foodsdetail/index",
-    "pages/search/index"
+    "pages/search/index",
+    "pages/pay/index",
+    "pages/shouquan/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

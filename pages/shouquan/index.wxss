@@ -1,0 +1,4 @@
+/* pages/shouquan/index.wxss */
+button{
+  margin-top: 50rpx;
+}

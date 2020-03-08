@@ -35,12 +35,6 @@
     <!-- 商品的详情 -->
     <block wx:for="{{foods}}" wx:key="index">
       <view class="detail">
-        <view class="choose">
-          <view bindtap="choosebuy" data-index="{{index}}">
-            <icon type="success" color="red" size="15" wx:if="{{item.flag}}"></icon>
-            <view class="quan"  wx:if="{{!item.flag}}"></view>
-          </view>
-        </view>
         <view class="pic">
           <image src="{{item.logo}}" mode="aspectFill"></image>
         </view>
@@ -48,12 +42,7 @@
           <view class="name">{{item.title}}</view>
           <view class="price-num">
             <view class="price">￥<text>{{item.price}}</text></view>
-            <view class="num">
-              <view bindtap="changenumber" data-index="{{index}}" data-num="{{-1}}">-</view>
-              <input value="{{item.number}}" type="number"></input>
-              <!-- 这里不是vue可以在标签里面处理事件，所以要找到伱点击的是谁 -->
-              <view bindtap="changenumber" data-index="{{index}}" data-num="{{1}}">+</view>
-            </view>
+            <view>数量*{{item.number}}</view>
           </view>
         </view>
       </view>
@@ -61,21 +50,7 @@
     <!-- 隔开下一个店铺 -->
     <view class="gekai"></view>
   </view>
-</view>
-<!-- 底部的结算框 -->
-<view class="bottom">
-  <view class="choose">
-    <view bindtap="quanxuan">
-      <icon type="success" color="red" size="15" wx:if="{{quanxuanflag}}"></icon>
-      <view class="quan" wx:if="{{!quanxuanflag}}"></view>
-    </view>
-    <text>全选</text>
-  </view>
-  <view class="total">
-    <view class="money">
-      合计：<text>￥<text class="qian">{{total}}</text></text>
-    </view>
-    <view class="contain">包含运费</view>
-  </view>
-  <view class="jiesuan" bindtap="topay">结算</view>
+  <view class="buttom">总价是：￥<text>{{total}}</text> </view>
+  <!-- 跳转到支付页或者是授权登录 -->
+  <button type="primary" bindtap="topay">确认支付</button>
 </view>

@@ -1,0 +1,2 @@
+<!--pages/shouquan/index.wxml-->
+<button type="primary" open-type="getUserInfo"  bindgetuserinfo="getuserinfo">授权</button>
